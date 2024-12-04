@@ -1,4 +1,8 @@
+import { useContext } from "react";
+import { Data } from "../../../../../App";
+
 const FullName = () => {
+    const data = useContext(Data) // ?
     return (
         <label>
             <p>ФИО</p>
