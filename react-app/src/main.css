@@ -1,0 +1,25 @@
+@import "./reset.css";
+
+@font-face {
+    font-family: "Jost";
+    src: url("./fonts/Jost/Jost.ttf");
+    font-weight: 500;
+}
+
+body {
+    font-family: "Jost";
+    font-size: 26px;
+    background-color: #f59300;
+    color: black;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    margin: 0;
+    display: flex;
+    place-items: center;
+}
+
+::placeholder {
+    color: rgba(0, 0, 0, 0.3);
+}
+
