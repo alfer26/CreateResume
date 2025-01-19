@@ -9,11 +9,7 @@ const Education = () => {
 
     useEffect(() => {
         const data = { ...getData.data };
-        data.educations.push({
-            degree: 'Бакалавр',
-            specialization: 'Программист',
-            title: 'МФТИ',
-        });
+        data.educations.push({});
         getData.setData(data);
     }, []);
     return (

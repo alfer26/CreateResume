@@ -59,7 +59,7 @@ const QualityChoice = styled.div`
     }
     border-radius: 15px;
     padding: 20px 30px 30px;
-    background-color: #ffe6c0;
+    background-color: #ffeccf;
     border-radius: 30px;
     border: 2px solid #2b2b2b;
     box-shadow: 0 0 0.5vw black;

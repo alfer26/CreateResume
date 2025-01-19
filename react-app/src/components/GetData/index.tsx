@@ -23,7 +23,7 @@ const Container = styled.div`
             flex-direction: column;
             gap: 30px;
             border-radius: 30px;
-            background-color: #ffe6c0;
+            background-color: #ffeccf;
             backdrop-filter: blur(4px);
             border: 2px solid #2b2b2b;
             box-shadow: 0 0 0.8vw black;

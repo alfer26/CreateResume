@@ -145,6 +145,7 @@ const Container = styled.div`
             }
         }
         .fullName {
+            z-index: 1;
             margin: 0 -51px -2px -100px;
             background-color: #f1c86d;
             display: flex;
@@ -156,6 +157,7 @@ const Container = styled.div`
         }
         .profession {
             margin: 0 -51px 0 -100px;
+            z-index: 1;
             background-color: #f1c86d;
             display: flex;
             align-items: start;

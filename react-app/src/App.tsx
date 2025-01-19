@@ -14,6 +14,7 @@ const Container = styled.div`
     width: 100vw;
     height: 100vh;
     position: relative;
+
     transition:
         left 0.7s ease,
         opacity 1s ease;
@@ -28,21 +29,9 @@ export const DataContext = createContext<ContextType | null>(null);
 
 const App = () => {
     const [data, setData] = useState<Data>({
-        description:
-            'Опытный frontend-разработчик с более чем 3-летним опытом в разработке веб-приложений, стремящийся к новым вызовам в динамичной компании.',
-        email: 'example@email.com',
-        fullName: 'Иванов Иван Иванович',
-        photo: {
-            fileName: 'sdggds.dsf',
-            fileUrl: MyPhoto,
-        },
-        hardSkills: 'Владение JavaScript, TypeScript, React, HTML, CSS. Небольшой опыт работы в Phyton и C++.',
-        phoneNumber: '+7 (012) 345-67-89',
-        profession: 'Frontend-разработчик',
-        softSkills: 'Коммуникабельный, решительный, 2 года опыта работы в команде.',
         educations: [],
         workExperience: [],
-        designOption: 's1',
+        designOption: 's',
     });
     const [showPreRender, setShowPreRender] = useState(false);
     const [hiddenWindow, setHiddenWindow] = useState<'none' | 'left' | 'right'>('none');

@@ -1,5 +1,5 @@
-import { FormEvent, useContext } from "react";
-import { DataContext } from "../../../../../../App";
+import { FormEvent, useContext } from 'react';
+import { DataContext } from '../../../../../../App';
 const Title = () => {
     const getData = useContext(DataContext)!;
 
