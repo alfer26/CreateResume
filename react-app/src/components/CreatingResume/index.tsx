@@ -18,9 +18,9 @@ type Props = {
 const CreatingResume: FC<Props> = ({ hiddenWindow }) => {
     const widthValue = () => {
         if (hiddenWindow == 'left') {
-            return 'calc(100vw - 6px)';
+            return 'calc(100vw)';
         }
-        return 'calc(50vw - 6px)';
+        return 'calc(50vw)';
     };
 
     const [scale, setScale] = useState(100);
@@ -29,16 +29,21 @@ const CreatingResume: FC<Props> = ({ hiddenWindow }) => {
     const [showContextMenu, setShowContextMenu] = useState<Position | null>(null);
 
     const handleWheelScroll = (value: number) => {
-        value = value / 20;
+        const generalWidthWindow = 1920;
+        const zoomFactor = (value / 1000) * (generalWidthWindow / window.innerWidth);
+        console.log(generalWidthWindow / window.innerWidth);
 
-        if (scale + value <= 300 && scale + value >= 30) {
-            setScale(scale + value);
-        }
+        const scaleChange = zoomFactor * scale;
+        const newScale = scale + scaleChange;
+        if (newScale >= 40 && newScale <= 3000) setScale(newScale);
     };
 
     const handleMouseMove = (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
         if (e.buttons === 4) {
-            setPosition({ x: position.x + e.movementX / (scale / 100), y: position.y + e.movementY / (scale / 100) });
+            setPosition({
+                x: position.x + e.movementX / (scale / 100),
+                y: position.y + e.movementY / (scale / 100),
+            });
         }
     };
 
@@ -70,7 +75,7 @@ const CreatingResume: FC<Props> = ({ hiddenWindow }) => {
                 e.preventDefault();
             }}
         >
-            <ParagraphPlace scale={scale} position={position} refParent={refContainer} />
+            <ParagraphPlace scale={scale} position={position} refParent={refContainer} resetScale={setScale} resetPosition={setPosition} />
             {showContextMenu && (
                 <ContextMenu position={showContextMenu} setPosition={setShowContextMenu} resetScale={setScale} resetPosition={setPosition} />
             )}

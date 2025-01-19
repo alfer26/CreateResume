@@ -1,5 +1,5 @@
-import { FormEvent, useContext } from "react";
-import { DataContext } from "../../../../../App";
+import { FormEvent, useContext } from 'react';
+import { DataContext } from '../../../../../App';
 
 const Profession = () => {
     const getData = useContext(DataContext)!;
@@ -14,10 +14,7 @@ const Profession = () => {
     return (
         <label>
             <p>Профессия</p>
-            <input
-                placeholder="Frontend-разработчик"
-                onInput={sendData}
-            />
+            <input placeholder="Frontend-разработчик" onInput={sendData} />
         </label>
     );
 };

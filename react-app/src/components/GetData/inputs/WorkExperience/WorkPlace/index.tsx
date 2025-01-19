@@ -1,5 +1,5 @@
 import Achievements from "./inputs/Achievements";
-import Dates from "./inputs/Period";
+import Period from "./inputs/Period";
 import Post from "./inputs/Post";
 import Title from "./inputs/Title";
 
@@ -8,7 +8,7 @@ const WorkPlace = () => {
         <div>
             <Title />
             <Post />
-            <Dates />
+            <Period />
             <Achievements />
         </div>
     )

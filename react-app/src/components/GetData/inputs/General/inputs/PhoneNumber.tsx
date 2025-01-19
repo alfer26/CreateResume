@@ -13,7 +13,7 @@ const PhoneNumber = () => {
         <label>
             <p>Номер телефона</p>
             <input
-                placeholder="+7(012)345-67-89"
+                placeholder="+7 (012) 345-67-89"
                 onInput={sendData}
             />
         </label>

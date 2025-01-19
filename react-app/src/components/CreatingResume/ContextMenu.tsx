@@ -3,15 +3,26 @@ import { Position } from '../../Types';
 import { FC } from 'react';
 
 const Container = styled.div`
+    border-radius: 30px;
+    color: white;
+    background-color: rgba(51, 51, 51, 0.92);
+    backdrop-filter: blur(4px);
+    border: 2px solid #2b2b2b;
+    @media (width < 1440px) {
+        border-radius: 2vw;
+    }
     display: flex;
     flex-direction: column;
-    border-radius: 10px;
-    background-color: #883005;
     position: absolute;
-    width: 20vw;
     transition: 0.8s ease;
-    display: flex;
     animation: display 0.4s;
+    @media (width < 1440px) {
+        font-size: 1.5vw;
+    }
+    @media (width < 1024px) {
+        border: 1px solid #2b2b2b;
+        font-size: 2vw;
+    }
     @keyframes display {
         from {
             opacity: 0;
@@ -22,9 +33,7 @@ const Container = styled.div`
     }
 `;
 const Button = styled.button`
-    margin: 3px;
-    border-radius: 7px;
-    background-color: #f59300;
+    padding: 5px 15px;
     flex-grow: 1;
 `;
 
@@ -36,21 +45,14 @@ type Props = {
 };
 
 const ContextMenu: FC<Props> = ({ position, setPosition, resetScale, resetPosition }) => {
-    const handleClick = (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
-        e.stopPropagation();
+    const handleClick = () => {
         resetScale(100);
         resetPosition({ x: 0, y: 0 });
         setPosition(null);
     };
     return (
         <Container style={{ left: position.x, top: position.y }} className="contextMenu">
-            <Button
-                onClick={(e) => {
-                    handleClick(e);
-                }}
-            >
-                Сбросить положение
-            </Button>
+            <Button onClick={handleClick}>Сбросить положение</Button>
         </Container>
     );
 };
