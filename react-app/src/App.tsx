@@ -5,7 +5,6 @@ import CreatingResume from './components/CreatingResume';
 import Slider from './components/Slider';
 import styled from 'styled-components';
 import PreRender from './components/PreRender';
-import MyPhoto from './myPhoto.png';
 
 const Container = styled.div`
     display: grid;

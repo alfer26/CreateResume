@@ -1,4 +1,4 @@
-import { Dispatch, FC, useContext, useEffect, useRef, useState } from 'react';
+import { Dispatch, FC, useEffect, useRef, useState } from 'react';
 import styled from 'styled-components';
 import html2canvas from 'html2canvas';
 import jsPDF from 'jspdf';
@@ -112,7 +112,13 @@ const ButtonClose = styled.button`
     top: 25px;
     right: 25px;
     width: 25px;
-    aspect-ratio: 1 / 1;
+    height: 25px;
+    @media (width < 1440px) {
+        top: calc(10px + 1.5vw);
+        right: calc(10px + 1.5vw);
+        width: calc(10px + 1.5vw);
+        height: calc(10px + 1.5vw);
+    }
     &:hover {
         scale: 1.1;
     }
@@ -220,7 +226,7 @@ const PreRender: FC<Props> = ({ setShowPreRender }) => {
 
         if (!refParagraphPlace.current) return;
 
-        const observer = new ResizeObserver((e) => {
+        const observer = new ResizeObserver(() => {
             const width = getWidth();
             const height = getHeight();
             setSize({ width: width, height: height });
@@ -239,9 +245,6 @@ const PreRender: FC<Props> = ({ setShowPreRender }) => {
         getScaleSheet();
     }, [size]);
 
-    useEffect(() => {
-        console.log('auto');
-    }, []);
     return (
         <Background ref={refBackground} onClick={closeWindow} style={{ opacity: display }}>
             <Container

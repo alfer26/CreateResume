@@ -31,7 +31,6 @@ const CreatingResume: FC<Props> = ({ hiddenWindow }) => {
     const handleWheelScroll = (value: number) => {
         const generalWidthWindow = 1920;
         const zoomFactor = (value / 1000) * (generalWidthWindow / window.innerWidth);
-        console.log(generalWidthWindow / window.innerWidth);
 
         const scaleChange = zoomFactor * scale;
         const newScale = scale + scaleChange;

@@ -16,11 +16,17 @@ type Props = {
 
 const Element: FC<Props> = ({ value, className }) => {
     const getWidth = () => {
-        if (refImg.current) {
+        if (refImg.current && refContainer.current) {
+            if (refImg.current.clientHeight / refImg.current.clientWidth > refContainer.current.clientHeight / refContainer.current.clientWidth) {
+                return '100%';
+            }
+            if (refImg.current.clientWidth / refImg.current.clientHeight > refContainer.current.clientWidth / refContainer.current.clientHeight) {
+                return 'auto';
+            }
             if (refImg.current.clientHeight > refImg.current.clientWidth) {
                 return `100%`;
             }
-            if (refImg.current.clientHeight == refImg.current.clientWidth && refContainer.current) {
+            if (refImg.current.clientHeight == refImg.current.clientWidth) {
                 if (refContainer.current.clientWidth > refContainer.current.clientHeight) {
                     return `100%`;
                 }
@@ -29,11 +35,17 @@ const Element: FC<Props> = ({ value, className }) => {
         return 'auto';
     };
     const getHeight = () => {
-        if (refImg.current) {
+        if (refImg.current && refContainer.current) {
+            if (refImg.current.clientWidth / refImg.current.clientHeight > refContainer.current.clientWidth / refContainer.current.clientHeight) {
+                return '100%';
+            }
+            if (refImg.current.clientHeight / refImg.current.clientWidth > refContainer.current.clientHeight / refContainer.current.clientWidth) {
+                return 'auto';
+            }
             if (refImg.current.clientWidth > refImg.current.clientHeight) {
                 return `100%`;
             }
-            if (refImg.current.clientWidth == refImg.current.clientHeight && refContainer.current) {
+            if (refImg.current.clientWidth == refImg.current.clientHeight) {
                 if (refContainer.current.clientHeight > refContainer.current.clientWidth) {
                     return `100%`;
                 }

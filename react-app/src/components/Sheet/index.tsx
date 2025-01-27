@@ -1,4 +1,4 @@
-import { FC, useContext, useEffect, useRef } from 'react';
+import { FC, useContext } from 'react';
 import styled from 'styled-components';
 import Element from '../CreatingResume/ParagraphPlace/Element';
 import Element2 from '../CreatingResume/ParagraphPlace/Element2';

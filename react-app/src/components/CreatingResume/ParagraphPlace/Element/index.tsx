@@ -17,7 +17,7 @@ type Props = {
     Image?: FC<string>;
 };
 
-const Element: FC<Props> = ({ value, className, Image }) => {
+const Element: FC<Props> = ({ value, className }) => {
     const getWidth = () => {
         if (refImg.current) {
             if (refImg.current.clientHeight > refImg.current.clientWidth) {
