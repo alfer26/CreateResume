@@ -1,25 +1,27 @@
-@import "./reset.css";
+@import './reset.css';
 
 @font-face {
-    font-family: "Jost";
-    src: url("./fonts/Jost/Jost.ttf");
-    font-weight: 500;
+    font-family: 'Jost';
+    src: url('./fonts/Jost/Jost-VariableFont_wght.ttf');
 }
 
 body {
-    font-family: "Jost";
-    font-size: 26px;
-    background-color: #f59300;
+    font-family: 'Jost';
+    font-size: 1.5rem;
     color: black;
-    text-rendering: optimizeLegibility;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
+    font-weight: 400;
     margin: 0;
     display: flex;
     place-items: center;
+    overflow: hidden;
+    background-color: #ebebeb;
 }
 
 ::placeholder {
     color: rgba(0, 0, 0, 0.3);
 }
 
+::-webkit-scrollbar {
+    width: 0;
+    height: 0;
+}

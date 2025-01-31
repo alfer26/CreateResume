@@ -10,17 +10,29 @@ if (started) {
 const createWindow = () => {
     // Create the browser window.
     const mainWindow = new BrowserWindow({
-        width: 800,
-        height: 600,
+        width: 1280,
+        height: 800,
+        minWidth: 300,
+        minHeight: 200,
         webPreferences: {
             preload: path.join(__dirname, "preload.js"),
+            devTools: false,
         },
     });
+
+    mainWindow.on("resize", () => {
+        const [width, height] = mainWindow.getSize();
+        const minHeight = Math.round(width / 1.7);
+        if (height < minHeight) {
+            mainWindow.setSize(width, minHeight); // Принудительно изменяем размер окна
+        }
+    });
+
     mainWindow.setMenuBarVisibility(false);
     //Development
-    mainWindow.loadURL(" http://localhost:5173");
+    // mainWindow.loadURL(" http://localhost:5173");
     //Production
-    // mainWindow.loadFile(path.join(__dirname, "index.html"));
+    mainWindow.loadFile(path.join(__dirname, "index.html"));
 };
 
 // This method will be called when Electron has finished
